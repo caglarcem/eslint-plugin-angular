@@ -18,7 +18,7 @@ module.exports = function(context) {
     return {
 
         CallExpression: function(node) {
-            var prefix = context.options[0] || '/^[A-Z][a-zA-Z0-9]*Controller$/';
+            var prefix = context.options[0] || '/^[A-Z][a-zA-Z0-9]*Ctrl/';
             var convertedPrefix; // convert string from JSON .eslintrc to regex
 
             convertedPrefix = utils.convertPrefixToRegex(prefix);
@@ -52,8 +52,6 @@ module.exports = function(context) {
     };
 };
 
-module.exports.schema = [
-    {
-        type: 'string'
-    }
-];
+module.exports.schema = [{
+    type: 'string'
+}];
